@@ -1,7 +1,6 @@
-import { CoveragePanel } from './components/CoveragePanel';
 import { InputsPanel } from './components/InputsPanel';
-import { LayersIcon, ScanIcon, StopIcon } from './components/Icons';
 import { ResultPanel } from './components/ResultPanel';
+import { CoveragePanel } from './components/CoveragePanel';
 import { useScan } from './hooks/useScan';
 
 export default function App() {
@@ -23,7 +22,9 @@ export default function App() {
         <div className="mx-auto flex w-full max-w-[1800px] flex-wrap items-center gap-4 px-6 py-4">
           <div className="flex items-center gap-3">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border/60 bg-gradient-to-br from-primary/10 to-primary/5 shadow-sm">
-              <LayersIcon className="size-5 text-primary" />
+              <svg className="size-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
             </span>
             <div className="min-w-0">
               <h1 className="text-[15px] leading-tight font-bold tracking-tight text-foreground">OneShot</h1>
@@ -50,7 +51,9 @@ export default function App() {
                 onClick={scan.cancel}
                 className="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-border/60 bg-elevated/50 px-4 py-2.5 text-[12.5px] font-medium text-foreground transition-all duration-200 hover:border-danger/60 hover:bg-danger/5 hover:text-danger active:scale-[0.96]"
               >
-                <StopIcon className="size-4" />
+                <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <rect x="6" y="6" width="12" height="12" rx="2" />
+                </svg>
                 Cancel
               </button>
             )}
@@ -61,7 +64,9 @@ export default function App() {
               disabled={!canScan}
               className="inline-flex cursor-pointer items-center gap-2.5 rounded-xl bg-primary px-5 py-2.5 text-[13px] font-semibold text-on-primary shadow-md shadow-primary/20 transition-all duration-200 hover:opacity-90 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.96] disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none"
             >
-              <ScanIcon className="size-4.5" />
+              <svg className="size-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
               Scan → Consolidate
             </button>
           </div>
